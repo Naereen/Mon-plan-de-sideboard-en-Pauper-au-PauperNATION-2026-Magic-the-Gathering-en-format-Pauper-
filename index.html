@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTG Pauper — Mono-Green Sideboard Cheat Sheet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        forest: { 900: '#0b2016', 800: '#113323', 700: '#1b4332', 600: '#2d6a4f', 500: '#40916c', 100: '#d8f3dc' },
+                        cardin: { bg: '#e8f5e9', text: '#1e7e34', border: '#a3cfbb' },
+                        cardout: { bg: '#fde8e8', text: '#c92a2a', border: '#f1aeb5' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 6mm;
+            }
+            body {
+                background: white !important;
+                color: black !important;
+                padding: 0 !important;
+                font-size: 10px !important;
+            }
+            .no-print { display: none !important; }
+            .print-exact { box-shadow: none !important; border: 1px solid #ccc !important; }
+            table { page-break-inside: avoid; }
+            tr { page-break-inside: avoid; page-break-after: auto; }
+            td, th { padding: 3px 6px !important; }
+        }
+        .card-tag-in {
+            background-color: #e8f5e9;
+            color: #1e7e34;
+            border: 1px solid #b7e4c7;
+        }
+        .card-tag-out {
+            background-color: #ffe3e3;
+            color: #c92a2a;
+            border: 1px solid #ffc9c9;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans min-h-screen p-3 md:p-6">
+
+    <div class="max-w-5xl mx-auto space-y-4">
+        
+        <!-- Header Controls -->
+        <header class="no-print bg-slate-800 border border-slate-700 rounded-xl p-4 shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+                <div class="flex items-center gap-2">
+                    <span class="inline-block w-3 h-3 rounded-full bg-emerald-500"></span>
+                    <h1 class="text-xl font-extrabold text-white tracking-tight">Mono-Green Elves / Stompy</h1>
+                </div>
+                <p class="text-xs text-slate-400 mt-1">Guide de Sideboard Synthétique • Top 15 Méta Pauper (Octobre 2026)</p>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <!-- Search Bar -->
+                <div class="relative flex-1 md:w-64">
+                    <input type="text" id="searchInput" placeholder="Rechercher deck ou carte..." 
+                           class="w-full bg-slate-900 border border-slate-700 rounded-lg pl-9 pr-3 py-1.5 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-emerald-500">
+                    <svg class="w-4 h-4 text-slate-500 absolute left-2.5 top-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </div>
+
+                <!-- Action Button Print / PDF -->
+                <button onclick="window.print()" class="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs px-4 py-2 rounded-lg transition-all flex items-center gap-1.5 shadow-lg shadow-emerald-900/30">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+                    </svg>
+                    <span>Imprimer / PDF</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Sheet Container (Formatted for high quality rendering & print) -->
+        <main class="bg-white text-slate-900 rounded-xl p-4 md:p-6 shadow-2xl border border-slate-200 print-exact">
+            
+            <!-- Document Title (Visible in Print) -->
+            <div class="border-b border-emerald-800/20 pb-3 mb-3 flex justify-between items-end">
+                <div>
+                    <h2 class="text-lg md:text-xl font-black text-forest-900 uppercase tracking-wide">Pauper Mono-Green Sideboard Cheat Sheet</h2>
+                    <p class="text-xs font-semibold text-forest-600">Guide rapide d'entrées / sorties contre le Méta Top 15</p>
+                </div>
+                <div class="text-right text-[10px] text-slate-500">
+                    <span>Format: A4 Synthétique</span>
+                </div>
+            </div>
+
+            <!-- Main Cheat Sheet Table -->
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse" id="sideboardTable">
+                    <thead>
+                        <tr class="bg-forest-700 text-white text-xs uppercase tracking-wider">
+                            <th class="py-2 px-3 rounded-tl-md w-1/4 font-bold">Archétype / Deck</th>
+                            <th class="py-2 px-3 w-3/8 font-bold text-emerald-200">📥 Rentrer (IN)</th>
+                            <th class="py-2 px-3 rounded-tr-md w-3/8 font-bold text-rose-200">📤 Sortir (OUT)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-xs divide-y divide-slate-200" id="tableBody">
+                        <!-- Dynamic rows injected via JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <footer class="mt-4 pt-2 border-t border-slate-200 flex justify-between items-center text-[10px] text-slate-500">
+                <span>Mono-Green Ramp Initiative / Elves (38 créatures Maindeck)</span>
+                <span>Astuce : Faerie Macabre s'utilise à 0 mana même sous contre-sort</span>
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        const data = [
+            { id: 1, deck: "1. Grixis Affinity", in: ["+2 Heritage Reclamation", "+3 Monstrous Emergence"], out: ["-1 Sagu Wildling", "-2 Generous Ent", "-2 Avenging Hunter"] },
+            { id: 2, deck: "2. Jund Wildfire / Gleam", in: ["+3 Monstrous Emergence", "+2 Faerie Macabre", "+2 Heritage Reclamation"], out: ["-4 Masked Vandal", "-1 Sagu Wildling", "-2 Avenging Hunter"] },
+            { id: 3, deck: "3. Kuldotha Red / Rally", in: ["+4 Vitu-Ghazi Inspector", "+3 Monstrous Emergence"], out: ["-4 Masked Vandal", "-1 Sagu Wildling", "-2 Avenging Hunter"] },
+            { id: 4, deck: "4. Dimir Terror (UB)", in: ["+4 Faerie Macabre", "+3 Monstrous Emergence"], out: ["-4 Masked Vandal", "-1 Sagu Wildling", "-2 Generous Ent"] },
+            { id: 5, deck: "5. Golgari Gardens", in: ["+4 Faerie Macabre", "+3 Monstrous Emergence"], out: ["-4 Masked Vandal", "-1 Sagu Wildling", "-2 Llanowar Elves"] },
+            { id: 6, deck: "6. Mono White / Caw-Gates", in: ["+2 Scattershot Archer", "+3 Monstrous Emergence", "+2 Heritage Reclamation"], out: ["-4 Masked Vandal", "-1 Sagu Wildling", "-2 Priest of Titania"] },
+            { id: 7, deck: "7. Jeskai Ephemerate", in: ["+4 Faerie Macabre", "+2 Heritage Reclamation"], out: ["-4 Masked Vandal", "-1 Sagu Wildling", "-1 Generous Ent"] },
+            { id: 8, deck: "8. Dimir / Mono U Faeries", in: ["+2 Scattershot Archer", "+4 Vitu-Ghazi Inspector", "+3 Monstrous Emergence"], out: ["-4 Masked Vandal", "-4 Avenging Hunter", "-1 Sagu Wildling"] },
+            { id: 9, deck: "9. Gruul Ponza / Ramp", in: ["+3 Monstrous Emergence", "+2 Faerie Macabre"], out: ["-4 Masked Vandal", "-1 Sagu Wildling"] },
+            { id: 10, deck: "10. Walls Combo", in: ["+3 Monstrous Emergence", "+2 Heritage Reclamation"], out: ["-4 Masked Vandal", "-1 Sagu Wildling"] },
+            { id: 11, deck: "11. Selesnya Bogles", in: ["+2 Heritage Reclamation", "+4 Vitu-Ghazi Inspector"], out: ["-1 Sagu Wildling", "-2 Quirion Ranger", "-3 Avenging Hunter"] },
+            { id: 12, deck: "12. Azorius Familiars", in: ["+4 Faerie Macabre", "+3 Monstrous Emergence", "+2 Scattershot Archer"], out: ["-4 Masked Vandal", "-4 Avenging Hunter", "-1 Sagu Wildling"] },
+            { id: 13, deck: "13. Pinger Tron / Egg Tron", in: ["+4 Faerie Macabre", "+2 Heritage Reclamation"], out: ["-4 Masked Vandal", "-1 Sagu Wildling", "-1 Generous Ent"] },
+            { id: 14, deck: "14. Miroir Green Stompy/Elves", in: ["+3 Monstrous Emergence", "+2 Scattershot Archer"], out: ["-4 Masked Vandal", "-1 Sagu Wildling"] },
+            { id: 15, deck: "15. Rakdos Madness / Burn", in: ["+4 Vitu-Ghazi Inspector", "+4 Faerie Macabre", "+3 Monstrous Emergence"], out: ["-4 Masked Vandal", "-4 Avenging Hunter", "-1 Sagu Wildling", "-2 Generous Ent"] }
+        ];
+
+        function renderTable(filterText = "") {
+            const tbody = document.getElementById("tableBody");
+            tbody.innerHTML = "";
+
+            const filtered = data.filter(item => {
+                const query = filterText.toLowerCase();
+                const inText = item.in.join(" ").toLowerCase();
+                const outText = item.out.join(" ").toLowerCase();
+                return item.deck.toLowerCase().includes(query) || inText.includes(query) || outText.includes(query);
+            });
+
+            filtered.forEach((row, index) => {
+                const tr = document.createElement("tr");
+                tr.className = index % 2 === 0 ? "bg-slate-50/80" : "bg-white";
+
+                const inBadges = row.in.map(card => 
+                    `<span class="inline-block card-tag-in px-1.5 py-0.5 rounded font-semibold text-[11px] mr-1 my-0.5">${card}</span>`
+                ).join("");
+
+                const outBadges = row.out.map(card => 
+                    `<span class="inline-block card-tag-out px-1.5 py-0.5 rounded font-semibold text-[11px] mr-1 my-0.5">${card}</span>`
+                ).join("");
+
+                tr.innerHTML = `
+                    <td class="py-1.5 px-3 font-bold text-slate-800 border-r border-slate-200">${row.deck}</td>
+                    <td class="py-1.5 px-3 border-r border-slate-200">${inBadges}</td>
+                    <td class="py-1.5 px-3">${outBadges}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        document.getElementById("searchInput").addEventListener("input", (e) => {
+            renderTable(e.target.value);
+        });
+
+        // Initial rendering
+        renderTable();
+    </script>
+</body>
+</html>
