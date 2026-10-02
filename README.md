@@ -2,13 +2,28 @@
 
 ## Mon deck pour ce weekend
 
+Je jouerai Elfes mono vert !
+Ma decklist est là :
+
 <https://moxfield.com/decks/bN-gAeL3iHSvgQPfrwn14w/>
+
+----
 
 ## Visuel de ce deck
 
-TODO: ajoute une screenshot.
+### Deck principal
 
-## Table
+![](Screenshot_20261002_163359_org_mozilla_firefox_HomeActivity_edit_1334528956271697.jpg)
+
+### Réserve
+
+![](Screenshot_20261002_163608_org_mozilla_firefox_HomeActivity.jpg)
+
+----
+
+## Table du plan de réserve
+
+Contre la quinzaine de decks les plus populaires en ce moment :
 
 | Archétype / Deck | 📥 Rentrer (IN) | 📤 Sortir (OUT) |
 | :--- | :--- | :--- |
@@ -30,4 +45,4 @@ TODO: ajoute une screenshot.
 
 ## Licence
 
-TODO:
+MIT Licensed
