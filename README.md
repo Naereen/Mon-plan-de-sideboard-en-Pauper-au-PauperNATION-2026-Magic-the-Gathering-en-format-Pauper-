@@ -1,5 +1,10 @@
 # Mon plan de sideboard en Pauper au PauperNATION 2026 (Magic the Gathering en format Pauper)
 
+En direct depuis le trajet en voiture vers ce grand weekend festif de Magic en Pauper en France...
+Allons perdre avec le sourire au PauperNATION !
+
+<https://www.pauper-france.fr/paupernation.php>
+
 ## Mon deck pour ce weekend
 
 Je jouerai Elfes mono vert !
@@ -9,15 +14,15 @@ Ma decklist est là :
 
 ----
 
-## Visuel de ce deck
+## Visuels de ce deck
 
 ### Deck principal
 
-![](Screenshot_20261002_163359_org_mozilla_firefox_HomeActivity_edit_1334528956271697.jpg)
+<img height="600" src="Screenshot_20261002_163359_org_mozilla_firefox_HomeActivity_edit_1334528956271697.jpg">
 
 ### Réserve
 
-![](Screenshot_20261002_163608_org_mozilla_firefox_HomeActivity.jpg)
+<img height="400" src="Screenshot_20261002_163608_org_mozilla_firefox_HomeActivity.jpg">
 
 ----
 
