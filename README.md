@@ -30,6 +30,9 @@ Ma decklist est là :
 
 Contre la quinzaine de decks les plus populaires en ce moment :
 
+<img height="500" src="Screenshot_20261002_165422_org_mozilla_firefox_HomeActivity.jpg">
+
+
 | Archétype / Deck | 📥 Rentrer (IN) | 📤 Sortir (OUT) |
 | :--- | :--- | :--- |
 | **1. Grixis Affinity** | +2 Heritage Reclamation<br>+3 Monstrous Emergence | -1 Sagu Wildling<br>-2 Generous Ent<br>-2 Avenging Hunter |
