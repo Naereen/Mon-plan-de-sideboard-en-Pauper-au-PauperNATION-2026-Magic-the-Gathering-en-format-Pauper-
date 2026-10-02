@@ -1,9 +1,12 @@
 # Mon plan de sideboard en Pauper au PauperNATION 2026 (Magic the Gathering en format Pauper)
 
 En direct depuis le trajet en voiture vers ce grand weekend festif de Magic en Pauper en France...
-Allons perdre avec le sourire au PauperNATION !
 
+Allons jouer avec le sourire au PauperNATION !
 <https://www.pauper-france.fr/paupernation.php>
+
+Mon plan de sideboard est là :
+[mon plan de sideboard en PDF](Mon%20plan%20de%20r%C3%A9serve%20au%20PauperNATION%202026.pdf).
 
 ## Mon deck pour ce weekend
 
@@ -54,3 +57,4 @@ Contre la quinzaine de decks les plus populaires en ce moment :
 ## Licence
 
 MIT Licensed
+Codé à la va-vite !
