@@ -56,5 +56,14 @@ Contre la quinzaine de decks les plus populaires en ce moment :
 
 ## Licence
 
-MIT Licensed
+MIT Licensed — see [LICENSE](LICENSE).
 Codé à la va-vite !
+
+## À propos et liens
+
+Cette page présente mon plan de sideboard personnel pour le deck Mono-Green Elves / Stompy au PauperNATION 2026. Ce guide n’est pas un document officiel du tournoi.
+
+- [Dépôt du projet sur GitHub](https://github.com/Naereen/Mon-plan-de-sideboard-en-Pauper-au-PauperNATION-2026-Magic-the-Gathering-en-format-Pauper-)
+- [Decklist sur Moxfield](https://moxfield.com/decks/bN-gAeL3iHSvgQPfrwn14w/)
+- [Licence MIT](LICENSE)
+- [Profil GitHub de l’auteur](https://github.com/Naereen)
